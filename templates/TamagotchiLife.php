@@ -9,7 +9,7 @@
     <?php
     include_once $_SERVER['DOCUMENT_ROOT'].'\templates\navbar.php';
     require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
-    Database::use('tamagotchi_bcl');
+    Database::use('cicd_tama');
 
     $life = Database::rawQueryWithReturnOne("SELECT * FROM tamagotchi_life WHERE id = ".$_GET["id"]);
     $tamagotchiName = Database::rawQueryWithReturnOne("SELECT name FROM tamagotchis WHERE id = ".$_GET["id"])[0];

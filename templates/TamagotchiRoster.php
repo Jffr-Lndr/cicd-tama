@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
 if( !isset($_COOKIE["accountName"]) ){
     header("location: /");
 }
-Database::use('tamagotchi_bcl');
+Database::use('cicd_tama');
 $MyTamagochiRoster = Database::rawQueryWithReturnAll(sprintf("SELECT * FROM tamagotchis WHERE account_id = '%s' AND IS_ALIVE(tamagotchis.id) = 0", $_COOKIE["accountID"]));
 ?>
 <?php

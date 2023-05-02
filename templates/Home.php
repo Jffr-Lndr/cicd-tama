@@ -10,7 +10,7 @@
 <body>
     <?php 
         require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
-        Database::use('tamagotchi_bcl');
+        Database::use('cicd_tama');
         if( isset($_POST["accountName"]) ){
             // DO DROP TABLE HERE FOR MAX FUN
             if(Database::rawQueryWithReturnOne(sprintf("SELECT COUNT(*) FROM accounts WHERE name = '%s'", $_POST["accountName"]))[0] > 0){
@@ -18,7 +18,7 @@
                 setcookie("accountID", Database::rawQueryWithReturnOne(sprintf("SELECT id FROM accounts WHERE name = '%s'", $_POST["accountName"]))["id"]);
             }
         }
-    Database::use('tamagotchi_bcl');
+    Database::use('cicd_tama');
     $MyTamagochiRoster = Database::rawQueryWithReturnAll(sprintf("SELECT * FROM tamagotchis WHERE account_id = '%s'", $_COOKIE["accountID"]));
 
     ?>

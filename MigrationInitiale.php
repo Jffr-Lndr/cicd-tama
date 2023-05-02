@@ -6,12 +6,12 @@ require_once $_SERVER['DOCUMENT_ROOT'].'\Column.php';
 //require_once 'Database.php';
 //require_once 'Table.php';
 //require_once 'Column.php';
-if(Database::doesDatabaseExist("tamagotchi_bcl"))
+if(Database::doesDatabaseExist("cicd_tama"))
 {
-    Database::dropDatabase("tamagotchi_bcl");
+    Database::dropDatabase("cicd_tama");
 }
 
-Database::migrate("tamagotchi_bcl", [
+Database::migrate("cicd_tama", [
     new Table("accounts", "id", [
         new Column("id", "int unsigned", "not null auto_increment"),
         new Column("name", "varchar(255)", "not null unique"),

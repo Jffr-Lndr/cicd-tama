@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
 
-Database::use("tamagotchi_bcl");
+Database::use("cicd_tama");
 Database::rawQuery("DROP PROCEDURE IF EXISTS `CREATE_ACCOUNT`");
 Database::rawQuery("DROP PROCEDURE IF EXISTS `CREATE_TAMAGOTCHI`");
 Database::rawQuery("DROP PROCEDURE IF EXISTS `EAT`");

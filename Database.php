@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'\Table.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Table.php';
 //require_once 'Table.php';
 // Partir d'un code pour en générer un projet
 // Dans le cadre de la BDD, on appelle ça des "migrations"
@@ -35,23 +35,25 @@ abstract class Database
         if (!self::$pdo) {
             // TODO Récupérer ces informations d'un fichier .env (ou plus généralement de configuration)
             $config = [
-                "host" => "localhost",
+                "host" => "db",
                 "port" => 3306,
-                "username" => "root",
-                "password" => "root",
-                "engine" => "mysql"
+                "username" => "cicd_tama",
+                "password" => "cicd_tama",
+                "engine" => "mysql",
+                "dbname" => "cicd_tama"
             ];
             // Création d'une instance PDO
             // Utilisation de sprintf : https://php.net/sprintf
             self::$pdo = new PDO(sprintf(
-                "%s:host=%s:%s",
+                // mysql:host=db:9906
+                "%s:dbname=%s;host=%s;charset=utf8;port=%s",
                 $config["engine"],
+                $config["dbname"],
                 $config["host"],
                 $config["port"]
             ), $config["username"], $config["password"], [
                 // https://www.php.net/manual/fr/pdo.constants.php
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
         }
         return self::$pdo;

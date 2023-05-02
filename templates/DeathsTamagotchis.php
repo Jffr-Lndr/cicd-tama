@@ -11,7 +11,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'\templates\navbar.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
-Database::use('tamagotchi_bcl');
+Database::use('cicd_tama');
 
 $MyDeadTamagochis = Database::rawQueryWithReturnAll(sprintf("SELECT tamagotchis.name,tamagotchis.birthdate,deaths.deathdate,deaths.id FROM tamagotchis JOIN accounts ON accounts.id = tamagotchis.account_id JOIN deaths ON deaths.tamagotchi_id = tamagotchis.id WHERE accounts.id = '%s'", $_COOKIE["accountID"]));
 ?>

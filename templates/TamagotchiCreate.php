@@ -10,7 +10,7 @@
 <body>
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
-Database::use('tamagotchi_bcl');
+Database::use('cicd_tama');
 if( isset($_POST["accountName"]) ){
     // DO DROP TABLE HERE FOR MAX FUN
     if(Database::rawQueryWithReturnOne(sprintf("SELECT COUNT(*) FROM accounts WHERE name = '%s'", $_POST["accountName"]))[0] > 0){
