@@ -1,4 +1,5 @@
 <?php
+namespace App\Column;
 class Column
 {
     public string $name;
