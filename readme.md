@@ -23,4 +23,4 @@ se connecter avec le compte crée
 ## Utilisation de l'application
 sur la page d'accueil, entre le nom de votre tamagotchi et cliquer sur "je créer mon tamagotchi"
 maintenant vous pouvez jouer avec votre tamagotchi en cliquant sur les boutons
-et essayer de le faire vivre le plus longtemps possible :).
+et essayer de le faire vivre le plus longtemps possible :.
