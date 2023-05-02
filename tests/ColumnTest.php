@@ -1,6 +1,6 @@
 <?php
+require_once '.\Column.php';
 use PHPUnit\Framework\TestCase;
-use App\Column;
 
 final class ColumnTest extends TestCase
 {
