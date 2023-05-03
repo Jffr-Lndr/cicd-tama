@@ -1,5 +1,20 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'./Database.php';
+
+
+$pdo = new PDO(sprintf(
+            "%s:host=%s;port=%s;dbname=%s;charset=utf8",
+            "mysql",
+            "db",
+            "3306",
+            "cicd_tama"
+        ), "root", "root", [
+            // https://www.php.net/manual/fr/pdo.constants.php
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+$stmt = $pdo->prepare("SET GLOBAL log_bin_trust_function_creators = 1");
+$stmt->execute();
+$pdo = null;
 
 Database::use("cicd_tama");
 Database::rawQuery("DROP PROCEDURE IF EXISTS `CREATE_ACCOUNT`");

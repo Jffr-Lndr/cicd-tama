@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Table.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'./Table.php';
 //require_once 'Table.php';
 // Partir d'un code pour en générer un projet
 // Dans le cadre de la BDD, on appelle ça des "migrations"
@@ -45,12 +45,12 @@ abstract class Database
             // Création d'une instance PDO
             // Utilisation de sprintf : https://php.net/sprintf
             self::$pdo = new PDO(sprintf(
-                // mysql:host=db:9906
-                "%s:dbname=%s;host=%s;charset=utf8;port=%s",
+                // %s:host=%s;port=%s;dbname=%s;charset=utf8
+                "%s:host=%s;port=%s;dbname=%s;charset=utf8",
                 $config["engine"],
-                $config["dbname"],
                 $config["host"],
-                $config["port"]
+                $config["port"],
+                $config["dbname"]
             ), $config["username"], $config["password"], [
                 // https://www.php.net/manual/fr/pdo.constants.php
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

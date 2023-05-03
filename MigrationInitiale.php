@@ -1,8 +1,8 @@
 <?php
 // Début du code
-require_once $_SERVER['DOCUMENT_ROOT'].'\Database.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'\Table.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'\Column.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'./Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'./Table.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'./Column.php';
 //require_once 'Database.php';
 //require_once 'Table.php';
 //require_once 'Column.php';
